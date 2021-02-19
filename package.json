@@ -12,7 +12,9 @@
         "type": "git",
         "url": "git+https://github.com/x-dirve/changelog.git"
     },
-    "scripts": {},
+    "scripts": {
+        "changelog": "node ./index"
+    },
     "bugs": {
         "url": "https://github.com/x-dirve/changelog/issues"
     },
