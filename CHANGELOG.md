@@ -1,3 +1,8 @@
+## v1.1.4
+
+### Fix
+- fix: 修复无法处理以 emoji 表情开头的 commit 🙄️ [3bb18de](https://github.com/x-dirve/changelog/commit/3bb18de61238af8203a92ea075fe0def5e4cd1c2)
+
 ## v1.1.3
 
 ### Fix
