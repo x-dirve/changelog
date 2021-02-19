@@ -1,3 +1,11 @@
+## v1.1.2
+
+### Feat
+- feat: 某种类型没有数据时不写入到 changelog 中 [faa8eec](https://hub.com/x-dirve/changelog/commit/faa8eec53039bf0c0cd2729a42f0d1bf4764a1a6)
+
+### Fix
+- fix: 修正说明错误 [a958aae](https://hub.com/x-dirve/changelog/commit/a958aae197af1472ebb1717db88d8183fe2d8b19)
+
 ## v1.1.1
 
 ### Feat
