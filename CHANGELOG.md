@@ -1,3 +1,8 @@
+## v1.1.3
+
+### Fix
+- fix: 修正从 repository 获取仓库的地址被意外修改的问题 [556e603](https://github.com/x-dirve/changelog/commit/556e60362708d070e5a4469cc1fe7cd8a5428c8b)
+
 ## v1.1.2
 
 ### Feat
