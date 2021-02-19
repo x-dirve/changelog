@@ -1,3 +1,8 @@
+## v1.1.1
+
+### Feat
+- feat: 修改 bin 配置 [f260eab](https://hub.com/x-dirve/changelog/commit/f260eabe0a645b12cc090563ff856b2230ab90f3)
+
 ## v1.1.0
 
 ### Feat
