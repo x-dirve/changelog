@@ -6,8 +6,8 @@ const chalk = require("chalk");
 
 const execute = promisify(exec);
 
-/**提交类型判断正则 */
-const FEATURE_REGEXP = /^(feat|fix)[\s]?\:/;
+/**提交类型判断正则，一些人会在 commit 特征前加上各种 emoji 表情，所以不要求完全以 feat 或 fix 开头 */
+const FEATURE_REGEXP = /(feat|fix)[\s]?\:/;
 
 /**模块名称 */
 const MOD_NAME = chalk.blue("[CHANGELOG]");

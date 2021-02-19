@@ -1,7 +1,7 @@
 {
     "name": "@x-drive/changelog",
-    "version": "1.1.3",
-    "description": "Be happy",
+    "version": "1.1.4",
+    "description": "一个简单的 changelog 生成模块",
     "author": "digiaries <digiaries@hotmail.com>",
     "license": "MIT",
     "main": "index.js",
@@ -25,5 +25,9 @@
     "devDependencies": {},
     "dependencies": {
         "chalk": "4.1.0"
-    }
+    },
+    "keywords": [
+        "x-drive",
+        "changelog"
+    ]
 }
