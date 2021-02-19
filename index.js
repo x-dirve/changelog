@@ -92,11 +92,12 @@ function saveChangelog(data, version, map) {
     try {
         const changeLog = Object.keys(data).reduce(
             (logArr, type) => {
-                logArr.push(`\n### ${getTitle(type, map)}`);
-                logArr = logArr.concat(
-                    // 去重
-                    data[type].filter(item => nowLog.indexOf(item) === -1)
-                );
+                // 去重
+                const logItems = data[type].filter(item => nowLog.indexOf(item) === -1);
+                if (logItems.length) {
+                    logArr.push(`\n### ${getTitle(type, map)}`);
+                    logArr = logArr.concat(logItems);
+                }
                 return logArr;
             }
             , [`## v${version}`]
