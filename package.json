@@ -1,0 +1,30 @@
+{
+    "name": "@x-drive/changelog",
+    "version": "1.0.0",
+    "description": "Be happy",
+    "author": "digiaries <digiaries@hotmail.com>",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/x-dirve/changelog.git"
+    },
+    "scripts": {
+    },
+    "bugs": {
+        "url": "https://github.com/x-dirve/changelog/issues"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+    },
+    "dependencies": {
+        "chalk": "4.1.0"
+    }
+}
