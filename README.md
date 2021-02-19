@@ -24,7 +24,7 @@ git log --no-merges --pretty=format:'%s [%h](${repositoryUrl}/commit/%H)' --abbr
 - 提交的 commit 至少有一条是以 `feat:` 或 `fix:` 开头的
 - `package.json` 的 scripts 字段中增加对应的运行命令，如
     ```json
-    "changelog": "node changelog"
+    "changelog": "changelog"
     ```
 - 运行 npm 命令，如
     ```sh
