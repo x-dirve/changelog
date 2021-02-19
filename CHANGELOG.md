@@ -1,3 +1,9 @@
+## v1.1.0
+
+### Feat
+- feat: 支持命令行调用 [1852fe8](https://hub.com/x-dirve/changelog/commit/1852fe8d47214808a9467e5421f458d97c789c3c)
+- feat: 增加可执行脚本 [b0d8164](https://hub.com/x-dirve/changelog/commit/b0d8164a2cd698bdf7c8264752a130b504fbbf35)
+
 ## v1.0.0
 
 ### Feat
