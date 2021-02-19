@@ -34,7 +34,7 @@ function getSettingAtPackageJsonFile() {
         };
 
         if (!conf.url && repository && repository.url) {
-            conf.url = repository.url.replace(/\.?git\+?/g, "");
+            conf.url = repository.url.replace(/\.git|git\+/g, "");
         }
 
         if (!conf.url || !/^http/.test(conf.url)) {
