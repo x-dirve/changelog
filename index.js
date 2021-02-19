@@ -59,10 +59,10 @@ function getSettingAtPackageJsonFile() {
 
 /**
  * 保存生成的 changelog
- * @param {String} data    待保存数据
+ * @param {{[key:string]:string[]}} data    待保存数据
  * @param {String} version 当前版本
  */
-function saveChangelog(data, version) {
+function saveChangelog(data, version, map) {
     const changelogFilePath = resolve(
         process.cwd()
         , "CHANGELOG.md"
@@ -82,7 +82,7 @@ function saveChangelog(data, version) {
             console.log(
                 MOD_NAME
                 , chalk.underline.yellow("Warning")
-                , `当前文件已存在 v${version} 的记录`
+                , `当前文件已存在 ${chalk.underline(`v${version}`)} 的记录`
             );
         }
     } catch(err) {
@@ -90,7 +90,20 @@ function saveChangelog(data, version) {
     }
 
     try {
-        writeFileSync(changelogFilePath, `${data}\n\n${nowLog}`, "utf8");
+        const changeLog = Object.keys(data).reduce(
+            (logArr, type) => {
+                logArr.push(`\n### ${getTitle(type, map)}`);
+                logArr = logArr.concat(
+                    // 去重
+                    data[type].filter(item => nowLog.indexOf(item) === -1)
+                );
+                return logArr;
+            }
+            , [`## v${version}`]
+        ).join("\n");
+
+        writeFileSync(changelogFilePath, `${changeLog}\n\n${nowLog}`, "utf8");
+
         nowLog = null;
         re = true;
     } catch (err) {
@@ -190,16 +203,8 @@ async function build() {
                 }
                 ,Object.create(null)
             );
-            const changeLog = Object.keys(logs).reduce(
-                (logArr, type) => {
-                    logArr.push(`\n### ${getTitle(type, conf.text)}`);
-                    logArr = logArr.concat(logs[type]);
-                    return logArr;
-                }
-                , [`## v${conf.version}`]
-            ).join("\n");
-
-            const re = saveChangelog(changeLog, conf.version);
+            
+            const re = saveChangelog(logs, conf.version, conf.text);
 
             console.log(
                 MOD_NAME
