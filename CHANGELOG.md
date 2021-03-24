@@ -1,3 +1,8 @@
+## v1.1.5
+
+### Feat
+- feat: 支持 perf、refactor 类型 [7ca9342](https://github.com/x-dirve/changelog/commit/7ca934207e69443240143be75dde7af3582ec14d)
+
 ## v1.1.4
 
 ### Fix
