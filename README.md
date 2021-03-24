@@ -2,7 +2,11 @@
 
 通过使用 git log 命令获取提交记录并通过特征提取符合规则的记录生成项目 Changelog。因此需要使用该模块的仓库在提交 commit 的时候依照具体情况在 commit 前加入相应的 commit 类型。
 
-目前支持的类型有 `feat` `fix`
+目前支持记录的类型有 `feat` `fix` `perf` `refactor`
+* feat: 新功能、新特性
+* fix: 修改 bug
+* perf: 更改代码，以提高性能
+* refactor: 代码重构
 
 如 `CHANGELOG.md` 文件已存在，模块会将内容追加到文件头部
 
