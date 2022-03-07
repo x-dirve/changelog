@@ -7,7 +7,7 @@ const chalk = require("chalk");
 const execute = promisify(exec);
 
 /**提交类型判断正则，一些人会在 commit 特征前加上各种 emoji 表情，所以不要求完全以 feat 或 fix 开头 */
-const FEATURE_REGEXP = /(feat|fix|perf|refactor)[\s]?\:/;
+const FEATURE_REGEXP = /(feat|fix|perf|refactor|build|chore)(\([\w\W]+\))?\s?\:/;
 
 /**模块名称 */
 const MOD_NAME = chalk.blue("[CHANGELOG]");
@@ -47,7 +47,7 @@ function getSettingAtPackageJsonFile() {
         }
 
         return conf;
-    } catch(err) {
+    } catch (err) {
         console.log(
             MOD_NAME
             , chalk.underline.red("Error")
@@ -85,7 +85,7 @@ function saveChangelog(data, version, map) {
                 , `当前文件已存在 ${chalk.underline(`v${version}`)} 的记录`
             );
         }
-    } catch(err) {
+    } catch (err) {
         nowLog = ""
     }
 
@@ -130,7 +130,7 @@ function saveChangelog(data, version, map) {
 function getTitle(key, map) {
     var title = map && map[key] || "";
     if (!title) {
-        title = key.replace(/^[a-z]/, function(m) {
+        title = key.replace(/^[a-z]/, function (m) {
             return m.toUpperCase();
         });
     }
@@ -202,9 +202,9 @@ async function build() {
                     }
                     return subject;
                 }
-                ,Object.create(null)
+                , Object.create(null)
             );
-            
+
             const re = saveChangelog(logs, conf.version, conf.text);
 
             console.log(
@@ -213,7 +213,7 @@ async function build() {
                 , `创建${re ? "成功" : "失败"}`
             );
         }
-    } catch(err) {
+    } catch (err) {
         console.log(
             MOD_NAME
             , chalk.underline.red("Error")
