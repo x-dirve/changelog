@@ -1,3 +1,8 @@
+## v1.1.6
+
+### Feat
+- feat: 支持更多的提交类型 [de43bdc](https://github.com/x-dirve/changelog/commit/de43bdc50e5266668aac84f2f4ca8b0c00df8edf)
+
 ## v1.1.5
 
 ### Feat
